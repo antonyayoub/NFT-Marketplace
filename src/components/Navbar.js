@@ -1,13 +1,5 @@
-import logo from "../logo_3.png";
 import fullLogo from "../full_logo.png";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 
@@ -65,7 +57,7 @@ function Navbar() {
     window.ethereum.on("accountsChanged", function (accounts) {
       window.location.replace(location.pathname);
     });
-  }, []);
+  });
 
   return (
     <div className="">
@@ -126,7 +118,9 @@ function Navbar() {
                   }`}
                   onClick={connectWebsite}
                 >
-                  {currAddress !== "0x" ? "Connected" : "Connect Wallet"}
+                  {connected && currAddress !== "0x"
+                    ? "Connected"
+                    : "Connect Wallet"}
                 </button>
               </li>
             </ul>

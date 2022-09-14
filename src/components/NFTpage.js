@@ -91,7 +91,7 @@ export default function NFTPage(props) {
             Seller: <span className="text-sm">{data.seller}</span>
           </div>
           <div>
-            {currAddress == data.owner || currAddress == data.seller ? (
+            {currAddress === data.owner || currAddress === data.seller ? (
               <div className="text-emerald-700">
                 You are the owner of this NFT
               </div>
