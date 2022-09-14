@@ -57,7 +57,8 @@ function Navbar() {
     window.ethereum.on("accountsChanged", function (accounts) {
       window.location.replace(location.pathname);
     });
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="">
